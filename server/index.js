@@ -31,6 +31,10 @@ const upload = multer({storage});
 // Middleware
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Helooo");
+});
+
 // Route to create a new post
 app.post("/posts", upload.single("image"), async (req, res) => {
   try {
